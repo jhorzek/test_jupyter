@@ -23,6 +23,7 @@ jobs:
         conda init bash
     # Build the book
     - name: Build the book
+      shell: bash -el {0} # need to restart bash; apparently this may do the trick
       run: |
         conda activate myenv
         jupyter-book build .
