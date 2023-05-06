@@ -21,6 +21,11 @@ jobs:
     - name: Initialize conda
       run: |
         conda init bash
+    # set up R - Kernel
+    - name: R Kernel
+      shell: Rscript {0}
+      run: |
+        IRkernel::installspec()
     # Build the book
     - name: Build the book
       shell: bash -el {0} # need to restart bash; apparently this may do the trick
