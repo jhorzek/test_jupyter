@@ -22,6 +22,7 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
+        conda activate myenv
         jupyter-book build .
 
     # Push the book's HTML to github-pages
