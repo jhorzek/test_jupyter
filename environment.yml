@@ -1,0 +1,9 @@
+name: myenv
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - python=3.8
+  - jupyter-book
+  - r-base
+  - r-lavaan
