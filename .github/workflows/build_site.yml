@@ -18,11 +18,12 @@ jobs:
       with:
         activate-environment: myenv
         environment-file: environment.yml
-
+    - name: Initialize conda
+      run: |
+        conda init bash
     # Build the book
     - name: Build the book
       run: |
-        conda init bash
         conda activate myenv
         jupyter-book build .
 
