@@ -23,12 +23,13 @@ jobs:
         conda init bash
     # set up R - Kernel
     - name: R Kernel
-      shell: Rscript {0}
+      shell: bash -el {0} # need to restart bash; apparently this may do the trick
       run: |
-        IRkernel::installspec()
+        conda activate myenv
+        Rscript -e "IRkernel::installspec()"
     # Build the book
     - name: Build the book
-      shell: bash -el {0} # need to restart bash; apparently this may do the trick
+      shell: bash -el {0}
       run: |
         conda activate myenv
         jupyter-book build .
